@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sign In</title>
+<link type="text/css" rel="stylesheet" href="stylesheets/sign.css">
+<link type="text/css" rel="stylesheet" href="stylesheets/common.css">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Play:400,700" rel="stylesheet">
+</head>
+<body>
+	<div id="content">
+    <form action="/signin" method="post" class="form">
+      <div class="form_line">
+        <div class="form_label">Your Name:</div>
+      </div>
+      <div class="form_line">
+        <input type="text" name="username"/>
+      </div>
+      <div class="form_line">
+        <button class="button gray" type="submit">Enter</button>
+        <button class="button gray" type="reset">Reset</button>
+      </div>
+    </form>
+  </div>
+</body>
+<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
+<script type="text/javascript">
+  var rename = $.cookie('rename');
+  var user = $.cookie('user');
+  console.log(rename,user);
+  if(rename == "true"){
+    alert("Username exist!");
+  }
+</script>
+</html>

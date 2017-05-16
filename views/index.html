@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ChatRoom</title>
+<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
+<script type="text/javascript" src="javascripts/jquery.qqFace.js"></script>
+<script type="text/javascript" src="javascripts/json2.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylesheets/icono.min.css">
+<link type="text/css" rel="stylesheet" href="stylesheets/common.css">
+<link type="text/css" rel="stylesheet" href="stylesheets/chat.css">
+</head>
+<body>
+  <div id="big-line">ChatRoom</div>
+  <div id="people">Total Users:</div>
+  <div class="music-name"></div>
+  <audio src="" autoplay controls="controls" class="sound"></audio>
+  <div id="contain">
+    <div id="content">
+      <div id="content_show" class="content_bottom">
+        <div id="contents"></div>
+      </div>
+      <div class="music-input">
+        <div class="music-group">
+          <span for="form-room-music-name" class="input-group-addon">Sound name:</span>
+          <input type="text" id="form-room-music-name" name="music_name" class="form-control form-inline input-sm" maxlength="30">
+        </div>
+        <div class="music-group">
+          <span for="form-room-music-url" class="input-group-addon">URL:</span>
+          <input type="text" id="form-room-music-url" name="music_url" class="form-control form-inline input-sm" maxlength="300">
+          <span class="input-group-btn">
+            <input type="button" name="play" class="btn btn-default btn-sm" value="Play!">
+          </span>
+        </div>
+      </div>
+      <div id="content_saying">
+        <div id="toolbar">
+          <div id="emotion" class="icono-smile"></div>
+          <div id="uploadimg" class="icono-image">
+            <form id="sendPicform" type="post" enctype="multipart/form-data" name="test">
+              <input id="j_sendmsg" type="file" name="fileField">
+            </form>
+          </div>
+          <div id="music" class="icono-music">
+            <form id="sendMusicform" type="post" enctype="multipart/form-data" name="music">
+              <input id="j_sendMusic" type="file" name="fileField">
+            </form>
+          </div>
+        </div>
+        <textarea id="input_content" contenteditable="true" placeholder="Click here to type a chat message.">
+        </textarea>
+        <div id="sayingto">Hi <span id="from"></span> , you are speaking with <span id="to"></span></div>
+        <div id="say">
+          <  >
+        </div>
+      </div>
+    </div>
+    <div id="users_online">
+      <div id="usersbar">
+        <div id="user_label">
+          Online Users
+        </div>
+        <div id="users_list">
+          <ul id="list">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="ring" style="widht:0px; height:0px;"></div>
+</body>
+<script type="text/javascript" src="javascripts/chat.js"></script>
+</html>
